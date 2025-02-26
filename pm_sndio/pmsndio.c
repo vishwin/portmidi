@@ -12,7 +12,7 @@
 #include "pminternal.h"
 #include "porttime.h"
 
-#define NDEVS 9
+#define NDEVS 17
 #define SYSEX_MAXLEN 1024
 
 #define SYSEX_START     0xf0
@@ -49,7 +49,7 @@ void pm_init()
     k++;
 
     for (i = 0; i < 4; i++) {
-        for (j = 0; j < 2; j++) {
+        for (j = 0; j < 4; j++) {
             sprintf(devs[k].name, "%s/%d", devices[i], j);
             pm_add_device("SNDIO", devs[k].name, TRUE, FALSE, (void *) &devs[k],
               &pm_sndio_in_dictionary);
